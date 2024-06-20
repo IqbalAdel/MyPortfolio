@@ -1,0 +1,29 @@
+*{
+    color: white;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >span{
+        font-weight: 700;
+        font-size: 32px;
+    }
+    >img{
+        cursor: pointer;
+    }
+}
+
+.padding-mobile{
+    padding: 37px 25px 37px 25px;
+}
+
+.padding-desktop{
+    padding: 50px;
+}
+
+.d-none{
+    display: none;
+}

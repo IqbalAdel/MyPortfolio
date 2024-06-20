@@ -1,0 +1,13 @@
+<div class="header" [ngClass] = "screenWidth < 992 ? 'padding-mobile' : 'padding-desktop'">
+    <span>Iqbal Adel</span>
+    <img [class.d-none]="!mobile" src="./../../assets/images/burger menu.png" alt="">
+    <div [class.d-none]="mobile">
+        <a href="#">About me</a>
+        <a href="#">Skills</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </div>
+
+</div>
+    <p>Screen width: {{ screenWidth }}</p>  
+    <p>Screen height: {{ screenHeight }}</p>  
