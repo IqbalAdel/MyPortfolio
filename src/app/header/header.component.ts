@@ -12,6 +12,10 @@ export class HeaderComponent implements OnInit{
   screenWidth: number = 0;  
   screenHeight: number = 0;  
   mobile: boolean = false;
+
+  items = ['About me', 'Skills', 'Portfolio', 'Contact'];
+  activeIndex: number | null = null;
+
     
   ngOnInit() {  
     this.screenWidth = window.innerWidth;  
@@ -24,5 +28,10 @@ export class HeaderComponent implements OnInit{
    this.screenWidth = window.innerWidth;
    this.screenHeight = window.innerHeight;
    this.screenWidth < 992 ? this.mobile = true : this.mobile = false;  
+ }
+
+ linkActive(index:number){
+  this.activeIndex = index;
+
  }
 }

@@ -1,13 +1,13 @@
-<div class="header" [ngClass] = "screenWidth < 992 ? 'padding-mobile' : 'padding-desktop'">
-    <span>Iqbal Adel</span>
-    <img [class.d-none]="!mobile" src="./../../assets/images/burger menu.png" alt="">
-    <div [class.d-none]="mobile">
-        <a href="#me">About me</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+<div class="test">
+    <div class="header">
+        <span>Iqbal Adel</span>
+        <div class="link-container">
+            <div *ngFor="let item of items; let i = index" class="d-none" [ngClass]="{'links': activeIndex === i}" (click)="linkActive(i)">
+                <a href="#{{item}}">{{item}}</a> 
+            </div>
+        </div>
+        <img class="burger" src="./../../assets/images/Propertyburger.svg" alt="">
     </div>
-
 </div>
-    <p>Screen width: {{ screenWidth }}</p>  
-    <p>Screen height: {{ screenHeight }}</p>  
+    <!-- <p>Screen width: {{ screenWidth }}</p>  
+    <p>Screen height: {{ screenHeight }}</p>   -->
