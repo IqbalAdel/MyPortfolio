@@ -1,13 +1,11 @@
-<div class="test">
-    <div class="header">
-        <span>Iqbal Adel</span>
-        <div class="link-container">
-            <div *ngFor="let item of items; let i = index" class="d-none" [ngClass]="{'links': activeIndex === i}" (click)="linkActive(i)">
-                <a href="#{{item}}">{{item}}</a> 
-            </div>
+<div class="header">
+    <span>Iqbal Adel</span>
+    <div class="link-container">
+        <div *ngFor="let item of items; let i = index" class="d-none" [ngClass]="{'links': activeIndex === i}" (click)="linkActive(i)">
+            <a href="#{{item}}">{{item}}</a> 
         </div>
-        <img class="burger" src="./../../assets/images/Propertyburger.svg" alt="">
     </div>
+    <img class="burger" src="./../../assets/images/Propertyburger.svg" alt="">
 </div>
     <!-- <p>Screen width: {{ screenWidth }}</p>  
     <p>Screen height: {{ screenHeight }}</p>   -->

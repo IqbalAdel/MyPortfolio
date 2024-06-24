@@ -1,1 +1,35 @@
-<p>project works!</p>
+
+@for (project of projects; track project) {
+    @if(screenWidth > 992){
+        <div [ngStyle]="project.reverse ? {'flex-direction': 'row-reverse'} : {'flex-direction': 'row'}" class="projects">
+            <div [ngStyle]="project.reverse ? {'margin-left': '100px'} : {'margin-right': '100px'}">
+                <img class="project-img" src="assets/images/{{project.image}}.svg" alt="">
+            </div>
+            <div class="description">
+                <h2>{{project.title}}</h2>
+                <span>{{project.tech}}</span>
+                <p>{{project.description}}</p>
+                <div class="btns">
+                    <button class="live">Live Test</button>
+                    <button class="git">Github</button>
+                </div>
+            </div>
+        </div>
+    }
+    @else{
+        <div [ngStyle]="{'flex-direction': 'column'}" class="projects">
+            <div>
+                <img class="project-img" src="assets/images/{{project.image}}.svg" alt="">
+            </div>
+            <div class="description">
+                <h2 class="title">{{project.title}}</h2>
+                <span>{{project.tech}}</span>
+                <p class="desc">{{project.description}}</p>
+                <div class="btns">
+                    <button class="live">Live Test</button>
+                    <button class="git">Github</button>
+                </div>
+            </div>
+        </div>
+    }
+}
