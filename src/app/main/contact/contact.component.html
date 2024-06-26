@@ -1,1 +1,64 @@
-<p>contact works!</p>
+<div class="title">
+    <div class="short-stick"></div>
+    <h1>Contact</h1>
+</div>
+
+<div class="container">
+    <div class="contact-text">
+        <h2>Got a problem to solve?</h2>
+        <br>
+        <p>
+            Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work. 
+            <br>
+            <br>
+            Need a Frontend developer? <strong>Contact me!</strong>
+        </p>
+    </div>
+    
+    <div class="contactForm">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      
+            <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required placeholder="Your name" [ngClass]="{
+                'alert': name.touched && name.invalid,
+                'correct': name.touched && name.valid
+              }" pattern="[A-Za-z]{1,20}( [A-Za-z]{1,20}){1,2}">
+            @if(name.invalid && name.touched){
+                <p class="error">Your full name is required!</p>
+            }
+    
+            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Your mail"  [ngClass]="{
+                'alert': email.touched && email.invalid,
+                'correct': email.touched && email.valid
+              }">
+            <p class="error" *ngIf="email.invalid && email.touched">Please enter your email, in a working format! (e.g. mail(at)web.com)</p>
+    
+            <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required placeholder="Your message" minlength="4" style="height:200px" [ngClass]="{
+                'alert-message': message.touched && message.invalid,
+                'correct-message': message.touched && message.valid
+              }"></textarea>
+      
+            @if(message.invalid && message.touched){
+                <p class="error">Please enter a message with at least 4 characters, thank you!</p>
+            }
+            <div class="d-flex piv">
+                <label class="privacy-check">
+                    <input #checkbox="ngModel" [(ngModel)]="isChecked" class="checkmark" type="checkbox" name="privacy" id="" required>
+                    <span class="check-span"></span>
+                </label>
+                <p>I've read the <a href="#Skills" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.</p>
+            </div>
+            @if( checkbox.touched && !checkbox.valid && !isChecked){
+                <span [ngStyle]="{'color': 'red'}">Please accept the privacy policy.</span>
+            }
+    
+            <div class="d-flex">
+                <input type="submit" value="Send message :)"
+                [ngClass]="message.valid && name.valid && email.valid && isChecked ? 'submit' : 'not-submit'">
+            </div>
+      
+        </form>
+        <a href="#menu" class="up-img">
+            <img src="./../../../assets/images/signs-symbols/up-blue.png" alt="">
+        </a>
+    </div>
+</div>

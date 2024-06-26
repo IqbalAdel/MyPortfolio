@@ -6,6 +6,28 @@
     scroll-behavior: smooth;
 }
 
+.title{
+    h1{
+        font-weight: bold;
+        font-size: 80px;
+    }
+}
+
+@media(max-width: 700px){
+    .title{
+      h1{
+        font-size: 50px;
+      }
+    }
+  }
+
+@mixin dFlex($d:flex, $jc:center, $ai:center, $r: row){
+    display: $d;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $r;
+}
+
 
 @font-face {
     font-display: swap;
