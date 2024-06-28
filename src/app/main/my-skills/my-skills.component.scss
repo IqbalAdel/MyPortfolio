@@ -1,0 +1,148 @@
+@import './../../../styles.scss';
+
+.d-column{
+    @include dFlex($r: column);
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button{
+        height: 58px;
+        width: 200px;
+        background-color: #70E61C;
+        color: white;
+        border-radius: 10px;
+        padding: 15px 30px 15px 30px;
+        border: none;
+        font-size: 23px;
+        cursor: pointer;
+    }
+}
+
+.grid-skills{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    // grid-template-areas:
+    // "c1 c2 c3 c4"
+    // "c5 c6 c7 ."
+    // "c8 c9  . ."
+    // "c10 . . .";
+    gap: 100px;
+    margin-left: 40px;
+}
+
+.skill{
+    @include dFlex($r: column);
+    gap: 5px;
+}
+
+.c8{
+    grid-area: 3 / 1;
+}
+
+.btn-desktop{
+    margin-top: 30px;
+}
+
+
+.title{
+    @include dFlex($jc: space-between);
+}
+
+.short-stick{
+    height: 4px;
+    width: 100%;
+    background-color: #4B47FF;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left: 40px;
+  }
+
+
+@media (max-width: 992px){
+    .title{
+        width: 100%;
+        // margin-left: 80px;
+    }
+
+    .txt{
+        margin-bottom: 50px;
+        margin-left: 40px;
+        width: 100%;
+    }
+
+    .grid-skills{
+        margin-bottom: 50px;
+        gap: 60px;
+        margin-right: 40px;
+    }
+
+    .btn-desktop{
+        display: none;
+    }
+
+    .btn-mobile{
+        margin-bottom: 50px;
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+
+    .btn{
+        @include dFlex();
+    }
+
+    .mobile-left{
+        width: 100%;
+    }
+}
+
+.skill {
+    // display: inline-block;
+    // overflow: hidden;
+  }
+  
+  .skill-img {
+    display: block;
+    transition: transform 0.3s;
+    // animation: none;
+    // animation-fill-mode: forwards;
+  }
+  
+  .skill:hover .skill-img {
+    animation: jump 0.3s ease-in-out;
+  }
+  
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+@media (min-width: 992px){
+    .btn-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 700px){
+    .grid-skills{
+        gap: 30px;
+    }
+}
+
+@media (max-width: 400px){
+    .grid-skills{
+        gap: 10px;
+        img{
+            width: 42px;
+            height: 45px;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import './../../../styles.scss';
+
+.container{
+    @include dFlex($jc: space-around);
+    margin-left: 40px;
+    margin-right: 40px;
+    >div>p{
+        width: 470px;
+    }
+
+    margin-bottom: 200px
+}
+
+.d-flex{
+    @include dFlex();
+}
+
+.d-column{
+    @include dFlex($r: column);
+}
+
+.text-container{
+    @include dFlex($ai: flex-start, $r: column);
+    gap: 30px;
+
+}
+
+.txt{
+    gap: 40px;
+}
+
+.bullet-points{
+    @include dFlex($jc: space-between, $r: column);
+    p{
+        width: 400px;
+    }
+    gap: 30px;
+
+}
+
+@media (max-width: 992px){
+    .container{
+        @include dFlex($r: column-reverse);
+    }
+}

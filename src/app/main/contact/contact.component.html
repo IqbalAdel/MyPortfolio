@@ -40,16 +40,18 @@
             @if(message.invalid && message.touched){
                 <p class="error">Please enter a message with at least 4 characters, thank you!</p>
             }
-            <div class="d-flex piv">
-                <label class="privacy-check">
-                    <input #checkbox="ngModel" [(ngModel)]="isChecked" class="checkmark" type="checkbox" name="privacy" id="" required>
-                    <span class="check-span"></span>
-                </label>
-                <p>I've read the <a href="#Skills" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.</p>
+            <div class="piv">
+                <div class="d-flex">
+                    <label class="privacy-check">
+                        <input #checkbox="ngModel" [(ngModel)]="isChecked" class="checkmark" type="checkbox" name="privacy" id="" required (click)="checkValue()">
+                        <span class="check-span"></span>
+                    </label>
+                    <p>I've read the <a href="#Skills" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.</p>
+                </div>
+                @if( checkbox.touched && !checkbox.valid && !isChecked){
+                    <span [ngStyle]="{'color': 'red'}">Please accept the privacy policy.</span>
+                }
             </div>
-            @if( checkbox.touched && !checkbox.valid && !isChecked){
-                <span [ngStyle]="{'color': 'red'}">Please accept the privacy policy.</span>
-            }
     
             <div class="d-flex">
                 <input type="submit" value="Send message :)"

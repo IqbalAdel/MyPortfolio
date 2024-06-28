@@ -4,6 +4,10 @@
   @include dFlex();
 }
 
+.d-colum{
+  @include dFlex($r: column);
+}
+
 a{
   text-decoration: none;
 }
@@ -24,6 +28,9 @@ input[type=text],input[type=email], select, textarea {
 
 
 
+    &:focus{
+      border-color: #00BEE8;
+    }
     &:hover{
       border-color: #00BEE8;
     }
@@ -97,7 +104,12 @@ input[type=submit] {
 }
 
 .piv{
-  margin-bottom: 40px;
+  margin-top: 10px;
+  @include dFlex($r: column, $ai: flex-start);
+
+  >div{
+    margin-bottom: 10px;
+  }
 }
 
 label input {
