@@ -1,11 +1,31 @@
-<div class="header">
-    <span>Iqbal Adel</span>
+<div  class="header padding">
+    <span [class.d-none]="global_service.open">Iqbal Adel</span>
     <div class="link-container">
         <div *ngFor="let item of items; let i = index" class="d-none" [ngClass]="{'links': activeIndex === i}" (click)="linkActive(i)">
-            <a href="#{{item}}">{{item}}</a> 
+            <a href="#{{item.id}}">{{item.section}}</a> 
         </div>
     </div>
-    <img class="burger" src="assets/images/Propertyburger.svg" alt="">
+    <img [class.d-none]="global_service.open" (click)="openOverlay()" class="burger" src="assets/images/Propertyburger.svg" alt="">
 </div>
     <!-- <p>Screen width: {{ screenWidth }}</p>  
     <p>Screen height: {{ screenHeight }}</p>   -->
+
+    <!-- <div class="wrapper" >
+    </div> -->
+    <div class="header wrapper" [ngStyle]="global_service.open ? {'transform': 'translateX(0)'} : {'transform': 'translateX(300%)'}">
+        <div class="header padding">
+            <span>Iqbal Adel</span>
+            <img  (click)="openOverlay()" src="assets/images/close.png" alt="">
+        </div>
+    </div>
+
+    <div [class.d-none]="!global_service.open" class="overlay-container">
+        <div   [class.overlay]="global_service.open">  
+        </div>
+
+        <div [ngStyle]="global_service.open ? {'transform': 'translateX(0)'} : {'transform': 'translateX(300%)'}" class="links-overlay">
+            @for (item of items; track item) {
+                <a (click)="openOverlay()" href="#{{item.id}}">{{item.section}}</a>    
+            }
+        </div>
+    </div>

@@ -3,15 +3,30 @@
 .d-column{
     @include dFlex($r: column);
 }
+
+*{
+    background-color: transparent;
+}
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: auto;
+    a{
+        text-decoration: none;
+    }
 
     button{
         height: 58px;
         width: 200px;
-        background-color: #70E61C;
+        background-color: #00BEE8;
+        transition: all 125ms ease-in-out;
+        &:hover{
+            background-color: #4B47FF;
+            transform: scale(1.15);
+            transform-origin: top center;
+        }
         color: white;
         border-radius: 10px;
         padding: 15px 30px 15px 30px;
@@ -25,11 +40,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-areas:
-    // "c1 c2 c3 c4"
-    // "c5 c6 c7 ."
-    // "c8 c9  . ."
-    // "c10 . . .";
     gap: 100px;
     margin-left: 40px;
 }
@@ -61,16 +71,18 @@
     margin-left: 40px;
   }
 
+  #Skills{
+    scroll-margin-top: 80px;
+  }
 
 @media (max-width: 992px){
     .title{
         width: 100%;
-        // margin-left: 80px;
     }
 
     .txt{
         margin-bottom: 50px;
-        margin-left: 40px;
+        padding-left: 40px;
         width: 100%;
     }
 
@@ -100,16 +112,11 @@
     }
 }
 
-.skill {
-    // display: inline-block;
-    // overflow: hidden;
-  }
-  
+
   .skill-img {
     display: block;
     transition: transform 0.3s;
-    // animation: none;
-    // animation-fill-mode: forwards;
+ 
   }
   
   .skill:hover .skill-img {
@@ -125,11 +132,7 @@
     }
   }
 
-@media (min-width: 992px){
-    .btn-mobile{
-        display: none;
-    }
-}
+
 
 @media (max-width: 700px){
     .grid-skills{
@@ -137,12 +140,123 @@
     }
 }
 
-@media (max-width: 400px){
+@media (max-width: 450px){
     .grid-skills{
         gap: 10px;
         img{
             width: 42px;
             height: 45px;
         }
+        margin-left: 0;
+        margin-right: 0;
     }
+
+    .mobile-left{
+        @include dFlex($r: column);
+        width: 100%;
+    }
+}
+
+@media (min-width: 320px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 200px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 400px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 270px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 500px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 340px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 550px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 370px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 600px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 410px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 650px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 440px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 700px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 480px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 700px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 510px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 750px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 540px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 800px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 580px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 850px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 610px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 900px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 640px 185px / contain no-repeat, 
+    ;
+    }
+}
+@media (min-width: 950px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/bottom.png') 680px 185px / contain no-repeat, 
+    ;
+    }
+}
+
+
+@media (min-width: 992px){
+    .btn-mobile{
+        display: none;
+    }
+
+    .container{
+        background-image: none;
+    }
+    
 }

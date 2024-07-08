@@ -1,0 +1,562 @@
+@import './../../../styles.scss';
+
+.d-flex{
+    @include dFlex();
+}
+
+.container{
+    padding-top: 200px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background:
+    url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat,
+    url('./../../../assets/images/shapes/right-landing.png') 220px -150px / contain no-repeat,
+    url('./../../../assets/images/shapes/left-landing.png') -120px -10px / contain no-repeat,;
+
+    a{
+        text-decoration: none;
+    }
+        
+}
+
+
+.front-page{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+
+}
+
+.start{
+    @include dFlex($r: column, $ai: flex-start);
+    background-color: transparent;
+    margin-right: 15px;
+}
+
+.text{
+    @include dFlex($ai: flex-end);
+    // padding-top: 140px;
+    background-color: transparent;
+
+
+}
+
+.vertical{
+    transform: rotate(270deg);
+    font-size: 80px;
+    margin-bottom: 40px;
+    background-color: transparent;
+
+}
+.name{
+ font-weight: bold;
+ font-size: 100px;
+ background-color: transparent;
+
+}
+
+.job{
+    font-size: 43px;
+    color:#4B47FF;
+    background-color: transparent;
+
+
+}
+
+.btn{
+    background-color: transparent;
+    @include dFlex();
+    width: 100%;
+    margin-top: 40px;
+    >button{
+        color: white;
+        border-radius: 10px;
+        padding: 10px 30px 10px 30px;
+        border: none;
+        font-size: 23px;
+        cursor: pointer;
+        background-color: #00BEE8;
+        transition: all 125ms ease-in-out;
+        &:hover{
+            background-color: #4B47FF;
+            transform-origin: top center;
+            transform: scale(1.15);
+        }
+    }
+}
+
+.links{
+    @include dFlex($jc: flex-start);
+    margin-top: 200px;
+}
+
+.short-stick{
+    height: 4px;
+    width: 80px;
+    background-color: #4B47FF;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-right: 20px;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.25);
+    }
+    transition: all ease-in-out 75ms;
+}
+
+@media(min-width: 320px){
+    .vertical{
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .name{
+        font-size: 40px;
+    }
+
+    .job{
+        font-size: 23px;
+    }
+}
+
+@media(min-width: 355px){
+    .vertical{
+        font-size: 38px;
+    }
+
+    .name{
+        font-size: 40px;
+    }
+
+    .job{
+        font-size: 25px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat,
+        url('./../../../assets/images/shapes/left-landing.png') -120px -10px / contain no-repeat,
+        url('./../../../assets/images/shapes/right-landing.png') 230px 0px / contain no-repeat,
+    }
+
+    // .text{
+    //     padding-top: 120px;
+    // }
+}
+@media(min-width: 400px){
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat,
+        url('./../../../assets/images/shapes/left-landing.png') -160px -10px / contain no-repeat,
+        url('./../../../assets/images/shapes/right-landing.png') 270px 0px / contain no-repeat,
+    }
+
+    .start{
+        margin-right: 25px;
+    }
+
+    
+}
+
+
+@media(min-width: 450px){
+    .vertical{
+        font-size: 50px;
+        margin-bottom: 25px;
+
+    }
+
+    .name{
+        font-size: 60px;
+    }
+
+    .job{
+        font-size: 32px;
+    }
+
+    .container{
+        background:
+            url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat,
+            url('./../../../assets/images/shapes/left-landing.png') -160px -10px / contain no-repeat,
+            url('./../../../assets/images/shapes/right-landing.png') 280px 0px / contain no-repeat,
+    }
+
+}
+
+@media(min-width: 500px){
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 310px -160px / contain no-repeat;
+
+    }
+
+    
+}
+
+@media(min-width: 550px){
+    .vertical{
+        font-size: 60px;
+    }
+
+    .name{
+        font-size: 70px;
+    }
+
+    .job{
+        font-size: 36px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 350px -140px / contain no-repeat;
+
+    }
+}
+@media(min-width: 600px){
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 380px -120px / contain no-repeat;
+
+    }
+
+    .start{
+        margin-right: 75px;
+    }
+}
+@media(min-width: 650px){
+    .vertical{
+        font-size: 70px;
+        margin-bottom: 30px;
+
+    }
+
+    .name{
+        font-size: 80px;
+    }
+
+    .job{
+        font-size: 40px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 410px -100px/ contain no-repeat;
+
+    }
+}
+@media(min-width: 700px){
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 440px -90px/ contain no-repeat;
+
+    }
+}
+@media(min-width: 750px){
+    .vertical{
+        font-size: 75px;
+        margin-bottom: 35px;
+
+    }
+
+    .name{
+        font-size: 90px;
+    }
+
+    .job{
+        font-size: 44px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 430px -80px / contain no-repeat;
+
+    }
+}
+@media(min-width: 800px){
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 470px -60px / contain no-repeat;
+
+    }
+}
+@media(min-width: 850px){
+    .vertical{
+        font-size: 85px;
+        margin-bottom: 40px;
+
+
+    }
+
+    .name{
+        font-size: 100px;
+    }
+
+    .job{
+        font-size: 48px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 510px -40px / contain no-repeat;
+
+    }
+}
+@media(min-width: 900px){
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 250px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 550px -20px / contain no-repeat;
+
+    }
+}
+@media(min-width: 950px){
+    .vertical{
+        font-size: 90px;
+        margin-bottom: 45px;
+
+    }
+
+    .name{
+        font-size: 110px;
+    }
+
+    .job{
+        font-size: 52px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 630px -100px/contain no-repeat;
+
+    }
+}
+@media(min-width: 1000px){
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 650px -100px/contain no-repeat;
+
+    }
+}
+@media(min-width: 1050px){
+    .vertical{
+        font-size: 100px;
+        margin-bottom: 50px;
+
+    }
+
+    .name{
+        font-size: 120px;
+    }
+
+    .job{
+        font-size: 56px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 675px -100px/contain no-repeat;
+
+    }
+}
+
+@media(min-width: 1100px){
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 710px -100px/contain no-repeat;
+
+    }
+}
+@media(min-width: 1150px){
+    .vertical{
+        font-size: 105px;
+        margin-bottom: 55px;
+
+    }
+
+    .name{
+        font-size: 130px;
+    }
+
+    .job{
+        font-size: 60px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 740px -100px/contain no-repeat;
+
+    }
+}
+
+@media(min-width: 1200px){
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 770px -100px/contain no-repeat;
+
+    }
+}
+@media(min-width: 1250px){
+    .vertical{
+        font-size: 110px;
+        margin-bottom: 60px;
+
+    }
+
+    .name{
+        font-size: 140px;
+    }
+
+    .job{
+        font-size: 64px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat,
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 800px -100px/contain no-repeat;
+
+    }
+}
+
+@media(min-width: 1300px){
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 845px -100px/contain no-repeat;
+
+    }
+}
+
+
+@media(min-width: 1350px){
+    .vertical{
+        font-size: 115px;
+        margin-bottom: 65px;
+
+    }
+
+    .name{
+        font-size: 150px;
+    }
+
+    .job{
+        font-size: 68px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 885px -100px/contain no-repeat;
+
+    }
+}
+
+@media(min-width: 1400px){
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat, 
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 950px -100px/contain no-repeat;
+
+    }
+}
+@media(min-width: 1450px){
+    .vertical{
+        font-size: 120px;
+        margin-bottom: 70px;
+
+    }
+
+    .name{
+        font-size: 150px;
+    }
+
+    .job{
+        font-size: 72px;
+    }
+
+    .container{
+        background:
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat,
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 1010px -100px/contain no-repeat;
+
+    }
+}
+
+@media(min-width: 1500px){
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat,
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 1060px -100px/contain no-repeat;
+
+    }
+}
+@media(min-width: 1550px){
+    .vertical{
+        font-size: 125px;
+        margin-bottom: 75px;
+
+    }
+
+    .name{
+        font-size: 160px;
+    }
+
+    .job{
+        font-size: 76px;
+    }
+
+    .container{
+        background: 
+        url('./../../../assets/images/shapes/whole-bottom.png') 0px 200px/100vw no-repeat,
+        url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat, 
+        url('./../../../assets/images/shapes/right-landing.png') 1300px -100px/contain no-repeat;
+
+    }
+}

@@ -4,6 +4,10 @@
     width: 400px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .btns{
     @include dFlex($jc: space-evenly);
     margin-top: 30px;
@@ -20,6 +24,7 @@ button{
     color: white;
     font-size: 23px;
     transition: all 225ms ease-in-out;
+    cursor: pointer;
 
 
     &:hover{

@@ -1,4 +1,4 @@
-<div class="title">
+<div id="Contact" class="title">
     <div class="short-stick"></div>
     <h1>Contact</h1>
 </div>
@@ -26,7 +26,7 @@
                 <p class="error">Your full name is required!</p>
             }
     
-            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Your mail"  [ngClass]="{
+            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" placeholder="Your mail"  [ngClass]="{
                 'alert': email.touched && email.invalid,
                 'correct': email.touched && email.valid
               }">
@@ -46,7 +46,7 @@
                         <input #checkbox="ngModel" [(ngModel)]="isChecked" class="checkmark" type="checkbox" name="privacy" id="" required (click)="checkValue()">
                         <span class="check-span"></span>
                     </label>
-                    <p>I've read the <a href="#Skills" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.</p>
+                    <p>I've read the <a href="privacy" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.</p>
                 </div>
                 @if( checkbox.touched && !checkbox.valid && !isChecked){
                     <span [ngStyle]="{'color': 'red'}">Please accept the privacy policy.</span>
@@ -60,7 +60,7 @@
       
         </form>
         <a href="#menu" class="up-img">
-            <img src="./../../../assets/images/signs-symbols/up-blue.png" alt="">
+            <img src="assets/images/signs-symbols/up-blue.png" alt="">
         </a>
     </div>
 </div>

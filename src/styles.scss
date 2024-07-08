@@ -6,11 +6,21 @@
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
 .title{
     h1{
         font-weight: bold;
         font-size: 80px;
     }
+}
+
+.scroll-stop{
+    overflow: hidden;
 }
 
 

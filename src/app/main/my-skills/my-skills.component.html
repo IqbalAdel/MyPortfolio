@@ -1,23 +1,25 @@
-<div class="container">
+<div id="Skills" class="container">
     <div class="mobile-left">
         <div class="grid-skills">
             @for (skill of skills; track $index) {
                 <div class="c{{$index+1}} skill">
-                    <img class="skill-img" src="./../../../assets/images/icons/{{skill.image}}.svg" alt="">
+                    <img class="skill-img" src="assets/images/icons/{{skill.image}}.svg" alt="">
                     <div>{{skill.name}}</div>
                 </div>
             }
         </div>
-        <div class="btn">
+        <a href="#Contact" class="btn">
             <button class="btn-mobile">Get in touch</button>
-        </div>
+        </a>
     </div>
     <div class="d-column txt">
         <div class="title">
             <h1>Skills</h1>
             <div class="short-stick"></div>
         </div>
-        <p>I have gained experience in building projects with various front end technologies and concepts.</p>
-        <button class="btn-desktop">Get in touch</button>
+        <p>I have gained experience in building projects with various frontend technologies and concepts.</p>
+        <a href="#Contact">
+            <button class="btn-desktop">Get in touch</button>
+        </a>
     </div>
 </div>

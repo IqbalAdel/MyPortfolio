@@ -1,0 +1,59 @@
+.data {
+    padding-top: 87px;
+    margin-left: 40px;
+    padding-bottom: 28px;
+    position: relative;
+
+    color: white;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.data a {
+    color: blue;
+    word-wrap: break-word;
+}
+
+.data a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.data h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+}
+
+.data h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+.data h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.title-return{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+@media(max-width: 992px){
+    .data{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}

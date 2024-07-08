@@ -55,7 +55,7 @@ a{
 .icons-div{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-right: 20px;
     
     img{
@@ -116,6 +116,7 @@ a{
     }
 
     .imprint {
+        width: fit-content;
         font-size: 12px;
         &:hover{
             &::before{

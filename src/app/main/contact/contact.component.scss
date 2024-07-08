@@ -12,6 +12,19 @@ a{
   text-decoration: none;
 }
 
+h2{
+  background-color: transparent;
+}
+
+.container{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  background: 
+        url('./../../../assets/images/shapes/port-right.png') -200px 100px / contain no-repeat, 
+        // url('./../../../assets/images/shapes/right-landing.png') 1350px -30px / contain no-repeat;
+}
+
 input[type=text],input[type=email], select, textarea {
     width: 100%; 
     padding: 15px 50px 15px 25px;
@@ -52,7 +65,7 @@ input[type=submit] {
   width: 253px;
   height: 58px;
   font-size: 23px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 
@@ -101,12 +114,15 @@ input[type=submit] {
 
 .privacy-check{
   @include dFlex();
+  
 }
 
 .piv{
   margin-top: 10px;
   @include dFlex($r: column, $ai: flex-start);
-
+  a{
+    background-color: transparent;
+  }
   >div{
     margin-bottom: 10px;
   }
@@ -181,13 +197,33 @@ input:-webkit-autofill:active{
     // margin-bottom: 30px;
   }
 
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .contact-text{
   width: 500px;
   margin-right: 140px;
+  background-color: transparent;
+  p{
+    background-color: transparent;
+    strong{
+      background-color: transparent;
+    }
+  }
+}
+
+.contactForm{
+  background-color: transparent;
+  form{
+    background-color: transparent
+  }
+  div{
+    background-color: transparent;
+    p{
+      background-color: transparent
+    }
+  }
 }
 
 .title{
@@ -204,23 +240,75 @@ input:-webkit-autofill:active{
   margin-right: 40px;
 }
 
+#Contact{
+  scroll-margin-top: 80px;
+}
+
 .up-img{
   @include dFlex($jc: flex-end);
 }
 
 @media (max-width: 992px) {
   .container{
-    @include dFlex($r: column);
+    @include dFlex($r: column);  
   }
 
   .contact-text{
-    width: fit-content;
-    margin-right: 0;
+    width: 650px;
     margin-bottom: 50px;
   }
 
   .title{
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 0;
+    margin-top: 100px;
   }
 }
+
+@media (max-width: 850px) {
+  .contact-text{
+    width: auto;
+    margin-right: 0;  
+  }
+}
+
+
+@media (min-width: 600px) {
+  .container{
+    background: 
+        url('./../../../assets/images/shapes/port-right.png') -250px 30px / contain no-repeat, 
+  }
+}
+
+@media (min-width: 650px) {
+  .container{
+    background: 
+        url('./../../../assets/images/shapes/port-right.png') -300px -20px / contain no-repeat, 
+  }
+}
+
+@media (min-width: 700px) {
+  .container{
+    background: 
+        url('./../../../assets/images/shapes/port-right.png') -350px -50px / contain no-repeat, 
+  }
+}
+
+@media (min-width: 750px) {
+  .container{
+    background: 
+        url('./../../../assets/images/shapes/port-right.png') -400px -100px / contain no-repeat, 
+  }
+}
+
+@media (min-width: 992px) {
+  .container{
+    background: 
+        url('./../../../assets/images/shapes/port-right.png') -340px -70px / contain no-repeat, 
+  }
+}
+
+
+
+
+
+
