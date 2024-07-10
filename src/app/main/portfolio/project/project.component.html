@@ -2,18 +2,23 @@
 @for (project of projects; track project) {
     @if(screenWidth > 992){
         <div [ngStyle]="project.reverse ? {'flex-direction': 'row-reverse'} : {'flex-direction': 'row'}" class="projects">
-            <div [ngStyle]="project.reverse ? {'margin-left': '100px'} : {'margin-right': '100px'}">
-                <img class="project-img" src="assets/images/{{project.image}}.svg" alt="">
+            <div [ngStyle]="project.reverse ? {'margin-left': '40px'} : {'margin-right': '40px'}">
+                <img class="project-img" src="assets/images/{{project.image}}.png" alt="">
             </div>
             <div class="description">
                 <h2>{{project.title}}</h2>
                 <span>{{project.tech}}</span>
-                <p>{{project.description}}</p>
+                @if(translation.langMode == "en"){
+                    <p>{{project.description}}</p>
+                }
+                @else{
+                    <p>{{project.translation}}</p>
+                }
                 <div class="btns">
-                    <a href="{{project.url}}">
+                    <a rel=”noreferrer” target="_blank" href="{{project.url}}">
                         <button class="live">Live Test</button>
                     </a>
-                    <a href="{{project.git}}">
+                    <a rel=”noreferrer” target="_blank" href="{{project.git}}">
                         <button class="git">Github</button>
                     </a>
                 </div>
@@ -23,12 +28,18 @@
     @else{
         <div [ngStyle]="{'flex-direction': 'column'}" class="projects">
             <div>
-                <img class="project-img" src="assets/images/{{project.image}}.svg" alt="">
+                <img class="project-img" src="assets/images/{{project.image}}.png" alt="">
             </div>
             <div class="description">
                 <h2 class="title">{{project.title}}</h2>
                 <span>{{project.tech}}</span>
-                <p class="desc">{{project.description}}</p>
+                @if(translation.langMode == "en"){
+                    <p class="desc">{{project.description}}</p>
+                }
+                @else{
+                    <p class="desc">{{project.translation}}</p>
+                }
+                
                 <div class="btns">
                     <button class="live">Live Test</button>
                     <button class="git">Github</button>

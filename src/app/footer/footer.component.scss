@@ -7,9 +7,12 @@ a{
 }
 
 .footer{
+    border-top: #00BEE8 solid 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px 50px 0 50px;
+    margin-top: 50px;
     > * {
         margin-bottom: 30px;
     }
@@ -97,7 +100,7 @@ a{
     }
 
     .footer{
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
 
         span{
@@ -125,6 +128,13 @@ a{
                 height: 2px;
             }
         }
+    }
+}
+
+@media (min-width: 1500px){
+    .footer{
+        justify-content: center;
+        gap: 440px;
     }
 }
 

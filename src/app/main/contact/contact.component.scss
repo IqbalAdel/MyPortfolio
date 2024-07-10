@@ -16,13 +16,19 @@ h2{
   background-color: transparent;
 }
 
+strong{
+  background-color: transparent;
+}
+
 .container{
   width: 100%;
   height: auto;
   background-color: transparent;
   background: 
-        url('./../../../assets/images/shapes/port-right.png') -200px 100px / contain no-repeat, 
-        // url('./../../../assets/images/shapes/right-landing.png') 1350px -30px / contain no-repeat;
+        url('./../../../assets/images/shapes/port-right.png') -200px 100px / contain no-repeat;
+  p{
+    border-radius: 10px;
+  }
 }
 
 input[type=text],input[type=email], select, textarea {
@@ -32,13 +38,13 @@ input[type=text],input[type=email], select, textarea {
     border: 1px solid #4B47FF; 
     border-radius: 10px; 
     margin-top: 6px;
-    margin-bottom: 16px; 
     resize: vertical;
     cursor: pointer;
     color: white;
     background-color: #141D2F !important;
     font-size: 16px;
 
+    
 
 
     &:focus{
@@ -66,6 +72,7 @@ input[type=submit] {
   height: 58px;
   font-size: 23px;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 
@@ -77,8 +84,17 @@ input[type=submit] {
   background-color: #00BEE8;
 }
 
+.error-box{
+  height: 30px;
+  margin-bottom: 20px;
+}
+
 .error{
-  color: #E61C40
+  color: #E61C40;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
 }
 
 .alert{
@@ -221,7 +237,8 @@ input:-webkit-autofill:active{
   div{
     background-color: transparent;
     p{
-      background-color: transparent
+      background-color: transparent;
+      width: fit-content;
     }
   }
 }
@@ -233,11 +250,10 @@ input:-webkit-autofill:active{
 
 .short-stick{
   height: 4px;
-  width: 40px;
+  width: 100%;
   background-color: #4B47FF;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  margin-right: 40px;
 }
 
 #Contact{
@@ -250,7 +266,8 @@ input:-webkit-autofill:active{
 
 @media (max-width: 992px) {
   .container{
-    @include dFlex($r: column);  
+    @include dFlex($r: column);
+    
   }
 
   .contact-text{
@@ -270,41 +287,64 @@ input:-webkit-autofill:active{
     margin-right: 0;  
   }
 }
+@media (max-width: 550px) {
+  .title{
+    h1{
+      margin-left: 15px;
+    } 
+  }
+}
 
 
+@media (min-width: 550px) {
+  .header{
+    span{
+      margin-left: 20px;
+    }
+  }
+
+  .short-stick{
+    margin-right: 40px;
+  }
+}
 @media (min-width: 600px) {
   .container{
     background: 
-        url('./../../../assets/images/shapes/port-right.png') -250px 30px / contain no-repeat, 
+        url('./../../../assets/images/shapes/port-right.png') calc(100% - 300px) 0px / contain no-repeat, 
   }
 }
 
-@media (min-width: 650px) {
+
+
+@media (min-width: 752px) {
+
   .container{
     background: 
-        url('./../../../assets/images/shapes/port-right.png') -300px -20px / contain no-repeat, 
+        url('./../../../assets/images/shapes/port-right.png') calc(100% - 500px) -50px / contain no-repeat, 
   }
 }
-
-@media (min-width: 700px) {
-  .container{
-    background: 
-        url('./../../../assets/images/shapes/port-right.png') -350px -50px / contain no-repeat, 
-  }
-}
-
-@media (min-width: 750px) {
-  .container{
-    background: 
-        url('./../../../assets/images/shapes/port-right.png') -400px -100px / contain no-repeat, 
-  }
-}
-
 @media (min-width: 992px) {
+
   .container{
     background: 
-        url('./../../../assets/images/shapes/port-right.png') -340px -70px / contain no-repeat, 
+        url('./../../../assets/images/shapes/port-right.png') calc(100% + 200px) -25px / contain no-repeat, 
   }
+
+  .contact-text{
+    margin-left: 20px;
+    margin-right: 70px;
+  }
+
+  .contactForm{
+    margin-right: 50px;
+  }
+}
+@media (min-width: 1500px) {
+  .contact-text{
+    margin-right: 140px;
+  }
+
+ 
 }
 
 

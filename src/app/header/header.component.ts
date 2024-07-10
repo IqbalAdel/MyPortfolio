@@ -5,7 +5,9 @@ import { GlobalServiceService } from '../service/global-service.service';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -19,18 +21,24 @@ export class HeaderComponent implements OnInit{
     {
       section: "About me",
       id:"About_me",
+      key: "Über mich",
     },
     {
       section: "Skills",
       id:"Skills",
+      key: "Skills",
     },
     {
       section: "Portfolio",
       id:"Portfolio",
+      key: "Portfolio",
+
     },
     {
       section: "Contact",
       id:"Contact",
+      key: "Kontakt",
+
     }
 ];
   activeIndex: number | null = null;
@@ -67,6 +75,12 @@ export class HeaderComponent implements OnInit{
     } else {
       document.body.classList.remove('scroll-stop');
     }
+  }
+
+  constructor(private translationService: GlobalServiceService) {}
+
+  switchLanguage(language: string) {
+    this.translationService.translatePage(language);
   }
 
 }

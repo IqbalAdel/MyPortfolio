@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, HostListener, OnInit } from '@angular/core';
+import { Component, Input, HostListener, OnInit, inject } from '@angular/core';
+import { GlobalServiceService } from '../../../service/global-service.service';
 
 @Component({
   selector: 'app-project',
@@ -10,6 +11,8 @@ import { Component, Input, HostListener, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit{
   @Input() marginRight:boolean = false;
+  // translation = inject(GlobalServiceService)
+  translation = inject(GlobalServiceService)
 
   projects = [
     {
@@ -20,6 +23,7 @@ export class ProjectComponent implements OnInit{
     reverse: false,
     url:"https://www.join.iqbal-adel.com/index.html",
     git: "https://github.com/IqbalAdel/join139",
+    translation:"Ein Taskmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, und weisen Sie Benutzer und Kategorien zu.",
     },
     {
     title: "El Pollo Loco",
@@ -29,6 +33,8 @@ export class ProjectComponent implements OnInit{
     reverse: true,
     url: "https://www.el-pollo-loco.iqbal-adel.com/index.html",
     git: "https://github.com/IqbalAdel/PolloLoco",
+    translation:"Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Helfen Sie Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+
     },
 
   ]

@@ -7,13 +7,16 @@
 
     margin-bottom: 100px;
     margin-top: 100px;
+
 }
-// .circle-wrapper {
-//     position: relative;
-//     width: 100%;
-//     max-width: 200px; 
-//     padding-top: 100%;
-// }
+
+.about{
+    h1{
+        font-size: 50px;
+        margin-left: 10px;
+    }
+}
+
 
 .bg-shape{
 
@@ -60,6 +63,11 @@
 
 .txt{
     gap: 40px;
+
+}
+
+.bulb{
+    padding-right: 10px;
 }
 
 .bullet-points{
@@ -74,6 +82,34 @@
     scroll-margin-top: 80px;
   }
 
+@media (min-width: 320px){
+    .text-container{
+        >p{
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (min-width: 550px){
+    .container{
+        margin-left: 10px;    
+    }
+}
+@media (min-width: 700px){
+    .about{
+        h1{
+            font-size: 80px;
+        }
+    }
+}
+
+@media (min-width: 850px) and (max-width: 992px){
+    .text-container{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 @media (min-width: 992px){
     .text-container{
         >p{
@@ -84,6 +120,19 @@
     .bg-shape{
         background: 
         url('./../../../assets/images/shapes/about-me.png') 0px 50px / contain no-repeat, 
+    }
+}
+
+@media (min-width: 1500px){
+    .text-container{
+        margin-right: 80px;
+    }
+}
+@media (min-width: 1900px){
+    .container{
+        @include dFlex($jc: center);
+        gap: 250px;
+        
     }
 }
 

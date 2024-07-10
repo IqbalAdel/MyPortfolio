@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
+import { GlobalServiceService } from '../../service/global-service.service';
 
 @Component({
   selector: 'app-contact',
@@ -24,6 +25,7 @@ export class ContactComponent {
 
   mailTest = false;
   http = inject(HttpClient)
+  translation = inject(GlobalServiceService)
 
   post = {
     endPoint: 'https://www.iqbal-adel.com/sendMail.php',

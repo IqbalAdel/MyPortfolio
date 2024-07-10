@@ -8,10 +8,14 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { GlobalServiceService } from './service/global-service.service';
 import { PrivacyComponent } from './privacy/privacy/privacy.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainComponent, HeaderComponent, FooterComponent, ImprintComponent, PrivacyComponent],
+  imports: [
+    CommonModule, RouterOutlet, MainComponent, HeaderComponent, FooterComponent, ImprintComponent, PrivacyComponent,
+
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
