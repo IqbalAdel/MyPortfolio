@@ -1,138 +1,109 @@
-<div id="Contact" class="title">
-    <div class="short-stick"></div>
-    <h1 data-translate-key="Header_contact">Contact</h1>
-    <div style="width: 100%;"></div>
-</div>
+<div style=" width: 100%;">
 
-<div class="container">
-    <div class="contact-text">
-        <h2 data-translate-key="problem">Got a problem to solve?</h2>
-        <br>
-        <p data-translate-key="kontaktieren">
-            Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work. 
-            <br>
-            <br>
-            Need a Frontend developer? <strong>Contact me!</strong>
-        </p>
+    <div id="Contact" class="title">
+        <div class="short-stick"></div>
+        <h1 data-translate-key="Header_contact">Contact</h1>
+        <div style="width: 100%;"></div>
     </div>
     
-    <div class="contactForm">
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <!-- @if(translation.langMode == "en"){
-                <input data-translate-key="name" #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required placeholder="Your name" [ngClass]="{
+    <div class="container">
+        <div class="contact-text">
+            <h2 data-translate-key="problem">Got a problem to solve?</h2>
+            <br>
+            <p data-translate-key="kontaktieren">
+                Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work. 
+                <br>
+                <br>
+                Need a Frontend developer? <strong class="transparent">Contact me!</strong>
+            </p>
+        </div>
+        
+        <div class="contactForm">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+          
+                <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required [placeholder]="translation.isGerman ? 'Ihr Name' : 'Your Name'" [ngClass]="{
                     'alert': name.touched && name.invalid,
                     'correct': name.touched && name.valid
                   }" pattern="[A-Za-z]{1,20}( [A-Za-z]{1,20}){1,2}">
-                @if(name.invalid && name.touched){
-                        <p class="error">Your full name is required!</p>
-                }
+                  <div class="error-box">
+                      @if(name.invalid && name.touched){
+                          @if(translation.langMode == "en"){
+                              <span class="error">Your full name is required!</span>
+                          }
+                          @else {
+                              <span class="error">Ihr voller Name ist notwendig!</span>
+                          }
+                        }
+                    </div>
         
-                <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" placeholder="Your mail"  [ngClass]="{
+                <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" [placeholder]="translation.isGerman ? 'Ihre Email' : 'Your Mail'"  [ngClass]="{
                     'alert': email.touched && email.invalid,
                     'correct': email.touched && email.valid
                   }">
-                    <p class="error" *ngIf="email.invalid && email.touched">Please enter your email, in a working format! (e.g. mail(at)web.com)</p>
-                
-        
-                <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required placeholder="Your message" minlength="4" style="height:200px" [ngClass]="{
-                    'alert-message': message.touched && message.invalid,
-                    'correct-message': message.touched && message.valid
-                  }"></textarea>
-                @if(message.invalid && message.touched){
-                        <p class="error">Please enter a message with at least 4 characters, thank you!</p> 
-                }
-            }
-            @else {
-                <input data-translate-key="name" #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required placeholder="Your name" [ngClass]="{
-                    'alert': name.touched && name.invalid,
-                    'correct': name.touched && name.valid
-                  }" pattern="[A-Za-z]{1,20}( [A-Za-z]{1,20}){1,2}">
-                @if(name.invalid && name.touched){
-                        <p class="error">Your full name is required!</p>
-                }
-        
-                <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" placeholder="Your mail"  [ngClass]="{
-                    'alert': email.touched && email.invalid,
-                    'correct': email.touched && email.valid
-                  }">
-                    <p class="error" *ngIf="email.invalid && email.touched">Please enter your email, in a working format! (e.g. mail(at)web.com)</p>
-                
-        
-                <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required placeholder="Your message" minlength="4" style="height:200px" [ngClass]="{
-                    'alert-message': message.touched && message.invalid,
-                    'correct-message': message.touched && message.valid
-                  }"></textarea>
-                @if(message.invalid && message.touched){
-                        <p class="error">Please enter a message with at least 4 characters, thank you!</p> 
-                }
-            } -->
-      
-            <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" required [placeholder]="translation.isGerman ? 'Ihr Name' : 'Your Name'" [ngClass]="{
-                'alert': name.touched && name.invalid,
-                'correct': name.touched && name.valid
-              }" pattern="[A-Za-z]{1,20}( [A-Za-z]{1,20}){1,2}">
-              <div class="error-box">
-                  @if(name.invalid && name.touched){
+                  <div class="error-box">
                       @if(translation.langMode == "en"){
-                          <span class="error">Your full name is required!</span>
-                      }
-                      @else {
-                          <span class="error">Ihr voller Name ist notwendig!</span>
-                      }
+                        <span class="error" *ngIf="email.invalid && email.touched">Please enter your email, in a working format! (e.g. mail(at)web.com)</span>
                     }
+                    @else {
+                        <span class="error" *ngIf="email.invalid && email.touched">Bitte geben Sie Ihre Email ein, in einem korrekten Format! (z.Bsp. mail(at)web.com)</span>
+                    }
+                  </div>
+                
+        
+                <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required [placeholder]="translation.isGerman ? 'Ihre Nachricht' : 'Your Message'" minlength="4" style="height:200px" [ngClass]="{
+                    'alert-message': message.touched && message.invalid,
+                    'correct-message': message.touched && message.valid
+                  }"></textarea>
+                  <div class="error-box">
+                      @if(message.invalid && message.touched){
+                          @if(translation.langMode == "en"){
+                              <span class="error">Please enter a message with at least 4 characters, thank you!</span>
+                          }
+                          @else {
+                              <span class="error">Bitte geben Sie eine Nachricht ein mit mindestens 4 Zeichen, vielen Dank!</span>
+                          }
+                      }
+                  </div>
+                <div class="piv">
+                    <div class="d-flex">
+                        <label class="privacy-check">
+                            <input #checkbox="ngModel" [(ngModel)]="isChecked" class="checkmark" type="checkbox" name="privacy" id="" required (click)="checkValue()">
+                            <span class="check-span"></span>
+                        </label>
+                        @if(translation.langMode == "en"){
+                            <p>I've read the
+                                <a routerLink="/privacy" fragment="privacy" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.
+                            </p>
+                        }
+                        @else {
+                            <p>Ich habe die
+                                <a routerLink="/privacy" fragment="privacy" [ngStyle]="{'color': '#4B47FF'}">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.
+                            </p>
+                        }
+                        
+                    </div>
+                    <div class="error-box">
+                        @if( checkbox.touched && !checkbox.valid && !isChecked){
+                            <span class="error">Please accept the privacy policy.</span>
+                        }
+                    </div>
                 </div>
-    
-            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" [placeholder]="translation.isGerman ? 'Ihre Email' : 'Your Mail'"  [ngClass]="{
-                'alert': email.touched && email.invalid,
-                'correct': email.touched && email.valid
-              }">
-              <div class="error-box">
-                  @if(translation.langMode == "en"){
-                    <span class="error" *ngIf="email.invalid && email.touched">Please enter your email, in a working format! (e.g. mail(at)web.com)</span>
-                }
-                @else {
-                    <span class="error" *ngIf="email.invalid && email.touched">Bitte geben Sie Ihre Email ein, in einem korrekten Format! (z.Bsp. mail(at)web.com)</span>
-                }
-              </div>
-            
-    
-            <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" name="message" required [placeholder]="translation.isGerman ? 'Ihre Nachricht' : 'Your Message'" minlength="4" style="height:200px" [ngClass]="{
-                'alert-message': message.touched && message.invalid,
-                'correct-message': message.touched && message.valid
-              }"></textarea>
-              <div class="error-box">
-                  @if(message.invalid && message.touched){
-                      @if(translation.langMode == "en"){
-                          <span class="error">Please enter a message with at least 4 characters, thank you!</span>
-                      }
-                      @else {
-                          <span class="error">Bitte geben Sie eine Nachricht ein mit mindestens 4 Zeichen, vielen Dank!</span>
-                      }
-                  }
-              </div>
-            <div class="piv">
+        
                 <div class="d-flex">
-                    <label class="privacy-check">
-                        <input #checkbox="ngModel" [(ngModel)]="isChecked" class="checkmark" type="checkbox" name="privacy" id="" required (click)="checkValue()">
-                        <span class="check-span"></span>
-                    </label>
-                    <p data-translate-key="privacy">I've read the <a href="privacy" [ngStyle]="{'color': '#4B47FF'}">privacy policy</a> and agree to the processing of my data as outlined.</p>
+                    <input type="submit" [value]="translation.isGerman ? 'Nachricht senden :)' : 'Send message :)'"
+                    [ngClass]="message.valid && name.valid && email.valid && isChecked ? 'submit' : 'not-submit'">
                 </div>
-                <div class="error-box">
-                    @if( checkbox.touched && !checkbox.valid && !isChecked){
-                        <span class="error">Please accept the privacy policy.</span>
-                    }
-                </div>
+          
+            </form>
+            <div class="up" (click)="scrollToTop()">
+                <a href="#menu" class="up-img">
+                    <img src="assets/images/signs-symbols/up-blue.png" alt="">
+                </a>
             </div>
+        </div>
     
-            <div class="d-flex">
-                <input type="submit" [value]="translation.isGerman ? 'Nachricht senden :)' : 'Send message :)'"
-                [ngClass]="message.valid && name.valid && email.valid && isChecked ? 'submit' : 'not-submit'">
-            </div>
-      
-        </form>
-        <a href="#menu" class="up-img">
-            <img src="assets/images/signs-symbols/up-blue.png" alt="">
-        </a>
+        <div class="snackbar" [class.active]="visible">
+            <span>Nachricht versendet!</span>
+        </div>
     </div>
 </div>

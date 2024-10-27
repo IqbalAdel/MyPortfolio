@@ -4,12 +4,42 @@
 
 .main{
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .title{
     font-weight: bold;
     font-size: 80px;
 
+}
+
+app-landing-page{
+    display: flex;
+    justify-content: center;
+}
+
+app-my-skills{
+    display: flex;
+    justify-content: center;
+}
+app-about-me{
+    display: flex;
+    justify-content: center;
+}
+
+app-portfolio{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+app-contact{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
 }
 
 

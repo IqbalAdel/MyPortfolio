@@ -18,8 +18,8 @@ export class GlobalServiceService {
       'de': 'Kontakt'
     },
     'me-txt': {
-      'en': 'Hi, I am a Front-end deverloper based in Frankfurt, Germany and I developed an interest in programming through entry level courses in university. Gradually, I realised my passion when working on front-end projects during the training at the Developer Academy. <br> <br> While I continued polishing my skills with established web-dev technologies I slowly built up my portfolio that is showcased here. Please have a look!',
-      'de': 'Hi, ich bin ein Frontend-Entwickler aus Frankfurt, und ich habe mein Interesse am Programmieren durch Einstiegs-Kurse an der Universität entdeckt. Allmählich erkannte ich mein starkes Interesse für den Bereich, als ich während der Ausbildung an der Developer Academy an zahlreichen Frontend-Projekten arbeitete. <br> <br> Während ich meine Fähigkeiten mit etablierten Webentwicklungstechnologien weiter verfeinerte, baute ich langsam mein Portfolio auf, das hier präsentiert wird. Bitte werfen Sie einen Blick darauf!'
+      'en': 'Hi, I am a Front-end deverloper based in Frankfurt, Germany and I developed an interest in programming through entry level courses in university. Gradually, I realised my passion when working on front-end projects during the training at the Developer Academy. <br>',
+      'de': 'Hi, ich bin ein Frontend-Entwickler aus Frankfurt, und ich habe mein Interesse am Programmieren durch Einstiegs-Kurse an der Universität entdeckt. Allmählich erkannte ich mein starkes Interesse für den Bereich, als ich während der Ausbildung an der Developer Academy an zahlreichen Frontend-Projekten arbeitete. <br>'
     },
     'point1': {
       'en': 'One of the favourite things I love about working as a front-end developer is that you can develop your own ideas, limited only by your own imaginations and then implement those ideas in reality through code while getting instant visual feedback on your work and the value that you have created.',
@@ -53,7 +53,7 @@ export class GlobalServiceService {
       'en': `Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work. 
             <br>
             <br>
-            Need a Frontend developer? <strong>Contact me!</strong>`,
+            Need a Frontend developer? <strong class="transparent">Contact me!</strong>`,
       'de': `Kontaktieren Sie mich über dieses Formular, gerne komme ich auf Sie zu, um über eine mögliche gemeinsame Arbeit zu reden. 
             <br>
             <br>

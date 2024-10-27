@@ -19,6 +19,9 @@ h2{
 strong{
   background-color: transparent;
 }
+.transparent{
+  background-color: transparent;
+}
 
 .container{
   width: 100%;
@@ -87,6 +90,9 @@ input[type=submit] {
 .error-box{
   height: 30px;
   margin-bottom: 20px;
+  @media (min-width:992px){
+    width: 520px;
+  }
 }
 
 .error{
@@ -213,13 +219,15 @@ input:-webkit-autofill:active{
     // margin-bottom: 30px;
   }
 
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .contact-text{
   width: 500px;
-  margin-right: 140px;
+  @media(min-width: 992px){
+    margin-right: 140px;
+  }
   background-color: transparent;
   p{
     background-color: transparent;
@@ -238,7 +246,9 @@ input:-webkit-autofill:active{
     background-color: transparent;
     p{
       background-color: transparent;
-      width: fit-content;
+      @media(min-width:992px){
+        width: 450px;
+      }
     }
   }
 }
@@ -260,8 +270,36 @@ input:-webkit-autofill:active{
   scroll-margin-top: 80px;
 }
 
-.up-img{
+.up{
   @include dFlex($jc: flex-end);
+}
+// .up-img{
+// }
+
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  // left: 50%;
+  width: 253px;
+  height: 58px;
+  background-color: #70E61C;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(300%); /* Startposition außerhalb des Bildschirms */
+  transition: transform 0.3s ease; /* Verwende eine Transition für das Transformieren */
+
+  >span{
+    background-color: transparent;
+  }
+
+  &.active {
+      transform: translateY(-450%); /* Transformiere die Snackbar nach oben, um sie anzuzeigen */
+    }
 }
 
 @media (max-width: 992px) {

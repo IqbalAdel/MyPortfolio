@@ -1,13 +1,13 @@
 @import './../../../styles.scss';
 
 .container{
-    @include dFlex($jc: space-around);
-    margin-left: 40px;
-    margin-right: 40px;
-
+    @include dFlex($jc: space-evenly);
     margin-bottom: 100px;
     margin-top: 100px;
-
+    width: 100%;
+    max-width: 1440px;
+    background-color: #141D2F;
+    z-index: 10;
 }
 
 .about{
@@ -31,18 +31,12 @@
     background-attachment: 
     fixed,
     scroll;
-    width: 100%;
-    height: 100%;
-    max-height: 600px;
-    min-height: 600px;
-    max-width: 600px;
-    min-width: 600px;
 }
 
 .profile {
     object-fit: contain;
-    width: 75%;
-    height: 100%;
+    width: 400px;
+    height: 400px;
     // margin-top: 250px
 
 }
@@ -58,12 +52,20 @@
 .text-container{
     @include dFlex($ai: flex-start, $r: column);
     gap: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    @media(width < 450px){
+        padding-right: 0;
+        padding-left: 0;
+    }
 
 }
 
 .txt{
     gap: 40px;
-
+    @media(width < 400px){
+        margin-left: 0;
+    }
 }
 
 .bulb{
@@ -87,14 +89,12 @@
         >p{
             margin-left: 10px;
         }
+
+        
     }
 }
 
-@media (min-width: 550px){
-    .container{
-        margin-left: 10px;    
-    }
-}
+
 @media (min-width: 700px){
     .about{
         h1{
@@ -103,19 +103,21 @@
     }
 }
 
-@media (min-width: 850px) and (max-width: 992px){
-    .text-container{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
-
 @media (min-width: 992px){
+    .container{
+        padding-left: 5px;
+        padding-right: 25px;
+        margin-top: 50px;
+
+    }
     .text-container{
         >p{
             width: 500px;
         }
+
     }
+
+
 
     .bg-shape{
         background: 
@@ -123,61 +125,39 @@
     }
 }
 
-@media (min-width: 1500px){
-    .text-container{
-        margin-right: 80px;
-    }
-}
-@media (min-width: 1900px){
-    .container{
-        @include dFlex($jc: center);
-        gap: 250px;
-        
+@media (max-width: 1200px){
+    .dnone{
+        display: none;
     }
 }
 
-@media (max-width: 1150px) and (min-width: 992px){
-    .bg-shape{
-        max-height: 400px;
-        min-height: 400px;
-        max-width: 400px;
-        min-width: 400px;;
-    }
 
+// @media (max-width: 1150px) and (min-width: 992px){
+//     .bg-shape{
+//         max-height: 400px;
+//         min-height: 400px;
+//         max-width: 400px;
+//         min-width: 400px;;
+//     }
+// }
 
-}
 @media (max-width: 992px){
+    
+
     .container{
         @include dFlex($r: column-reverse);
-        margin-right: 10px;
+        margin-top: 110px;
     }
     .text-container{
         margin-top: 50px;
     }
-    .bg-shape{
-        background: 
-        url('./../../../assets/images/shapes/about-me.png') 50px 50px / contain no-repeat,;
-    }
 
 
 }
 
-@media(max-width: 600px){
-    .bg-shape{
-        max-height: 400px;
-        min-height: 400px;
-        max-width: 400px;
-        min-width: 400px;
-    }
-
-}
 
 
 @media (max-width: 550px){
-    .container{
-        margin-left: 10px;
-        // margin-right: 10;
-    }
 
     .bullet-points{
         p{
@@ -202,34 +182,17 @@
         }
     }
 
-    .bg-shape{
-        background: 
-            url('./../../../assets/images/shapes/about-me.png') 0px 0px / contain no-repeat, 
-    }
 }
 @media (max-width: 450px){
 
     .bullet-points{
-        p{
-            width: 270px;
-            word-break: break-word;
-        }
         img{
-            width: 30px;
+            width: 45px;
             height: auto;
         }
     }
 }
 
-@media(max-width: 400px){
-    .bg-shape{
-        max-height: 300px;
-        min-height: 300px;
-        max-width: 300px;
-        min-width: 300px;;
-    }
-
-}
 
 @media (max-width: 375px){
 
@@ -238,5 +201,11 @@
             width: 220px;
             word-break: break-word;
         }
+    }
+}
+
+@media(min-height: 750px){
+    .container{
+        margin-top: 200px;
     }
 }

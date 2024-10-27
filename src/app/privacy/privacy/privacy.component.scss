@@ -1,8 +1,15 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
 .data {
     padding-top: 87px;
-    margin-left: 40px;
+    // margin-left: 40px;
     padding-bottom: 28px;
     position: relative;
+    width: 100%;
+    max-width: 1440px;
 
     color: white;
 
@@ -55,18 +62,29 @@
     cursor: pointer;
 }
 
+// @media(min-width: 1550px){
+//     .data{
+//         margin-left: 40px;
+//     }
+// }
+@media(max-width: 1550px){
+    .data{
+        margin-left: 40px;
+    }
+}
+@media(max-width: 1440px){
+    .data{
+        margin-left: 25px;
+    }
+}
 @media(max-width: 992px){
     .data{
-        margin-left: 50px;
-        margin-right: 50px;
+        margin-left: 15px;
     }
 }
 
 @media(max-width: 450px){
     .data{
-        margin-left: 25px;
-        margin-right: 25px;
-
         h1{
             font-size: 1.5em;
         }

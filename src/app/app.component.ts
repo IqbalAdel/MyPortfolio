@@ -6,18 +6,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { GlobalServiceService } from './service/global-service.service';
-import { PrivacyComponent } from './privacy/privacy/privacy.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule, RouterOutlet, MainComponent, HeaderComponent, FooterComponent, ImprintComponent, PrivacyComponent,
-
-  ],
+  
+  imports: [CommonModule, HeaderComponent, FooterComponent, RouterOutlet, MainComponent, ImprintComponent, PrivacyComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'portfolio'; 

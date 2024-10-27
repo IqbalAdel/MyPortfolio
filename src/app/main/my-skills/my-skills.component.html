@@ -1,5 +1,5 @@
 <div id="Skills" class="container">
-    <div class="mobile-left">
+    <div data-aos="" class="mobile-left">
         <div class="grid-skills">
             @for (skill of skills; track $index) {
                 <div class="c{{$index+1}} skill">
@@ -8,19 +8,23 @@
                 </div>
             }
         </div>
-        <a href="#Contact" class="btn">
-            <button data-translate-key="kont" class="btn-mobile">Get in touch</button>
-        </a>
+        <div class="btn-mobile">
+            <a href="#Contact" class="btn">
+                <button data-translate-key="kont">Get in touch</button>
+            </a>
+        </div>
     </div>
-    <div class="d-column txt">
-        <div class="title">
+    <div data-aos="" class="d-column txt">
+        <div data-aos="fade-down" class="title">
             <div class="short-stick"></div>
             <h1>Skills</h1>
             <div style="width: 100%;"></div>
         </div>
         <p data-translate-key="skill-txt">I have gained experience in building projects with various frontend technologies and concepts.</p>
-        <a href="#Contact">
-            <button data-translate-key="kont" class="btn-desktop">Get in touch</button>
-        </a>
+        <div class="btn-desktop">
+            <a href="#Contact">
+                <button data-translate-key="kont">Get in touch</button>
+            </a>
+        </div>
     </div>
 </div>

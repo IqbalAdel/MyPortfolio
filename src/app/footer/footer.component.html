@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="desktop-imprint">
         <a href="#menu">Iqbal Adel</a>
-        <a href="imprint" class="imprint hide">Impressum</a>
+        <a data-translate-key="imprint" routerLink="/imprint" fragment="imprint" [ngClass]="getFooterClass()" class="imprint hide">Impressum</a>
     </div>
     <span>&#169; Iqbal Adel 2024</span>
     <div class="icons-div">
@@ -15,5 +15,5 @@
             <img class="icon" src="assets/images/icons/linksmall.svg" alt="">
         </a>
     </div>
-    <a data-translate-key="imprint" href="imprint" class="imprint d-none">Impressum</a>
+    <a data-translate-key="imprint" routerLink="/imprint" fragment="imprint" [ngClass]="getFooterClass()" class="imprint d-none">Impressum</a>
 </div>

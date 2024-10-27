@@ -1,15 +1,14 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 @Component({
-  selector: 'app-about-me',
+  selector: 'app-privacy',
   standalone: true,
   imports: [],
-  templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+  templateUrl: './privacy/privacy.component.html',
+  styleUrl: './privacy/privacy.component.scss'
 })
-export class AboutMeComponent implements AfterViewInit{
-  
+export class PrivacyComponent implements AfterViewInit {
+
   constructor(private route: ActivatedRoute) { }
 
   ngAfterViewInit() {

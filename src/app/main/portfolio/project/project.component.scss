@@ -2,6 +2,7 @@
 
 .project-img{
     width: 400px;
+    background-color: transparent;
 }
 
 a{
@@ -15,6 +16,11 @@ a{
 
 .projects{
     @include dFlex($r: row);
+}
+
+#Portfolio{
+  scroll-margin-top: 200px;
+  margin-top: 50px;
 }
 
 button{

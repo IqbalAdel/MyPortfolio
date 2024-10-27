@@ -1,14 +1,18 @@
 <div  class="header padding">
     <!-- <h1>{{ 'Test' | translate }}</h1> -->
-    <span [class.d-none]="global_service.open">Iqbal Adel</span>  
+    <a routerLink="/" [class.d-none]="global_service.open"><span class="name">
+        Iqbal Adel
+    </span></a>  
     <div class="link-container">
-        <button style="cursor: pointer;" (click)="switchLanguage('en')">EN</button>
-        <button style="cursor: pointer;" class="de" (click)="switchLanguage('de')">DE</button>
+        <div  [ngClass]="getHeaderClass()">
+            <button style="cursor: pointer;" (click)="switchLanguage('en')">EN</button>
+            <button style="cursor: pointer;" class="de" (click)="switchLanguage('de')">DE</button>
+        </div>
         <div class="d-none">
-            <a data-translate-key="Header_me" href="#About_me">About me</a>    
-            <a href="#Skills">Skills</a>    
-            <a href="#Portfolio">Portfolio</a>    
-            <a data-translate-key="Header_contact" href="#Contact">Contact</a> 
+            <a data-translate-key="Header_me" routerLink="/" fragment="About_me">About me</a>    
+            <a routerLink="/" fragment="Skills">Skills</a>    
+            <a routerLink="/" fragment="Portfolio">Portfolio</a>    
+            <a data-translate-key="Header_contact" routerLink="/" fragment="Contact">Contact</a> 
         </div>
     </div>
     <img [class.d-none]="global_service.open" (click)="openOverlay()" class="burger" src="assets/images/Propertyburger.svg" alt="">
@@ -20,14 +24,16 @@
         </div>
     </div>
 
-    <div [class.d-none]="!global_service.open" class="overlay-container">
-        <div   [class.overlay]="global_service.open">  
+    @if(screenWidth < 992){
+        <div [class.d-none]="!global_service.open" class="overlay-container">
+            <div   [class.overlay]="global_service.open">  
+            </div>
+    
+            <div [ngStyle]="global_service.open ? {'transform': 'translateX(0)'} : {'transform': 'translateX(300%)'}" class="links-overlay">
+                <a data-translate-key="Header_me" (click)="openOverlay()" routerLink="/" fragment="About_me">About me</a>    
+                <a (click)="openOverlay()" routerLink="/" fragment="Skills">Skills</a>    
+                <a (click)="openOverlay()" routerLink="/" fragment="Portfolio">Portfolio</a>    
+                <a data-translate-key="Header_contact" (click)="openOverlay()" routerLink="/" fragment="Contact">Contact</a>    
+            </div>
         </div>
-
-        <div [ngStyle]="global_service.open ? {'transform': 'translateX(0)'} : {'transform': 'translateX(300%)'}" class="links-overlay">
-            <a data-translate-key="Header_me" (click)="openOverlay()" href="#About_me">About me</a>    
-            <a data-translate-key="Header_skill" (click)="openOverlay()" href="#Skills">Skills</a>    
-            <a data-translate-key="Header_port" (click)="openOverlay()" href="#Portfolio">Portfolio</a>    
-            <a data-translate-key="Header_contact" (click)="openOverlay()" href="#Contact">Contact</a>    
-        </div>
-    </div>
+    }

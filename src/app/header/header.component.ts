@@ -1,12 +1,14 @@
 import { Component, OnInit, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GlobalServiceService } from '../service/global-service.service';
+import { RouterLink, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -16,6 +18,8 @@ export class HeaderComponent implements OnInit{
   screenHeight: number = 0;  
   mobile: boolean = false;
   global_service = inject(GlobalServiceService)
+  currentRoute: string = "";
+
 
   items = [
     {
@@ -48,6 +52,11 @@ export class HeaderComponent implements OnInit{
     this.screenWidth = window.innerWidth;  
     this.screenHeight = window.innerHeight; 
     this.screenWidth < 992 ? this.mobile = true : this.mobile = false;  
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    });
   }  
 
  @HostListener('window:resize', ['$event'])
@@ -77,10 +86,22 @@ export class HeaderComponent implements OnInit{
     }
   }
 
-  constructor(private translationService: GlobalServiceService) {}
+  constructor(private translationService: GlobalServiceService, private router: Router) {}
 
   switchLanguage(language: string) {
     this.translationService.translatePage(language);
+  }
+
+  getHeaderClass() {
+    if (this.currentRoute === '/') {
+      return '';
+    } else if (this.currentRoute === '/imprint#imprint') {
+      return 'hidden';
+    } else if (this.currentRoute === '/privacy#privacy') {
+      return 'hidden';
+    } else {
+      return '';
+    }
   }
 
 }

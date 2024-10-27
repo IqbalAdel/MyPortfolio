@@ -1,3 +1,28 @@
 *{
     color: white;
 }
+
+
+app-header{
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1440px) {
+        height: 80px;
+        background-color: #141D2F;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+
+      }
+}
+
+app-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border-top: #00BEE8 solid 4px;
+
+}
+
+

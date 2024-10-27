@@ -1,6 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, HostListener, OnInit, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Input, HostListener, OnInit, inject, AfterViewInit } from '@angular/core';
 import { GlobalServiceService } from '../../../service/global-service.service';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-project',
@@ -13,6 +15,13 @@ export class ProjectComponent implements OnInit{
   @Input() marginRight:boolean = false;
   // translation = inject(GlobalServiceService)
   translation = inject(GlobalServiceService)
+
+  // ngAfterViewInit() {
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     Aos.init(); // Initialisieren von AOS nur im Browser
+  //   }
+  // }
+
 
   projects = [
     {
@@ -46,6 +55,12 @@ export class ProjectComponent implements OnInit{
   ngOnInit() {  
     this.screenWidth = window.innerWidth;  
     this.screenHeight = window.innerHeight; 
+    AOS.init({
+      duration: 1200, // Dauer der Animationen in Millisekunden
+      easing: 'ease-in-out', // Easing-Funktion der Animationen
+      once: true, // Animationen nur einmal abspielen
+      mirror: false // Animationen beim Zurückscrollen nicht abspielen
+    });
   }  
 
   @HostListener('window:resize', ['$event'])

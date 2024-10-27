@@ -15,10 +15,10 @@
     @include dFlex($r: column);
     width: 100%;
     height: auto;
-    padding-bottom: 100px;
     h1{
         font-weight: bold;
         font-size: 80px;
+        background-color: transparent;
     }
 
     >p{
@@ -28,6 +28,7 @@
     >div{
         @include dFlex($jc: flex-end);
         width: 100%;
+        background-color: transparent;
         >div{
             width: 100%;
             @include dFlex($jc: flex-end);

@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1440px;
     height: auto;
     a{
         text-decoration: none;
@@ -32,6 +33,8 @@
         border: none;
         font-size: 23px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
         
     }
 }
@@ -62,6 +65,8 @@
 .btn-mobile{
     display: inline-flex;
     align-items: flex-end; 
+    justify-content: center;
+    width: 100%;
 }
 
 

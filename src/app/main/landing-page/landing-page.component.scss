@@ -5,14 +5,17 @@
 }
 
 .container{
-    padding-top: 150px;
+    position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: transparent;
     background:
-    url('./../../../assets/images/shapes/mobile-bottom.png') 0px 270px/100vw 100vh no-repeat,
     url('./../../../assets/images/shapes/left-landing.png') -250px -15px / contain no-repeat,
     url('./../../../assets/images/shapes/right-landing.png') calc(100% + 350px) -100px / contain no-repeat,;
+
+    @media(min-width: 750px) and (max-width: 992px){
+        padding-top: 50px;
+    }
 
     a{
         text-decoration: none;
@@ -38,20 +41,23 @@
     @include dFlex($ai: flex-end);
     background-color: transparent;
 
-
 }
+
 
 .vertical{
     transform: rotate(270deg);
     font-size: 80px;
     margin-bottom: 40px;
     background-color: transparent;
+    white-space: nowrap;
 
 }
 .name{
  font-weight: bold;
  font-size: 100px;
  background-color: transparent;
+ white-space: nowrap;
+
 
 }
 
@@ -59,7 +65,7 @@
     font-size: 43px;
     color:#4B47FF;
     background-color: transparent;
-
+    white-space: nowrap;
 
 }
 
@@ -67,8 +73,12 @@
     background-color: transparent;
     @include dFlex();
     width: 100%;
-    margin-top: 40px;
-    >button{
+    @media(min-height: 900px){
+        margin-top: 40px;
+    }
+    z-index: 1;
+    position: relative;
+    button{
         color: white;
         border-radius: 10px;
         padding: 10px 30px 10px 30px;
@@ -87,8 +97,12 @@
 
 .links{
     @include dFlex($jc: flex-start);
-    margin-top: 150px;
-    background-color: transparent;
+    // margin-top: 150px;
+    background-color: #141D2F;
+    z-index: 1;
+    position: relative;
+    margin-top: 30px;
+
 }
 
 .short-stick{
@@ -119,6 +133,8 @@
     }
 }
 
+
+
 @keyframes slideIn {
     from {
       transform: translateY(-100px);
@@ -136,31 +152,67 @@
 
 .profile {
     object-fit: contain;
-    width: 100%;
-    height: 100%;
-    // margin-top: 250px
+    width: 80%;
+    height: 80%;
+    margin-bottom: -50px;
+    @media(max-width: 992px) {
+        width: 75%;
+        height: 75%;
+    }
+    @media(max-width: 402px) {
+        width: 50%;
+        height: 50%;
+    }
 
 }
 
 .aot{
-    @include dFlex()
+    @include dFlex();
 }
 
 .transparent{
     background-color: transparent;
 }
 
+
+
+.text{
+    z-index: 1;
+    position: relative;
+}
+
+
+.image{
+    z-index: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.background-section {
+    position: absolute;
+    width: 100%;
+    height: 190px;
+    bottom: 0;
+    z-index: 0;
+    background-color: transparent;
+}
+
+
+@media(max-width: 1440px){
+    .background-section {
+        display: block;
+    }
+}
+
 @media(max-width: 992px){
     .aot{
         @include dFlex($r: column)
     }
-}
-@media(max-width: 500px){
-    .container{
-        background:
-        url('./../../../assets/images/shapes/mobile-bottom.png') 0px 270px/100vw 100vh no-repeat,
-        url('./../../../assets/images/shapes/left-landing.png') -200px -15px / contain no-repeat,
-        url('./../../../assets/images/shapes/right-landing.png') calc(100% + 250px) -20px / contain no-repeat,;
+
+    .background-section{
+        height: 355px;
     }
 }
 
@@ -177,6 +229,7 @@
     .job{
         font-size: 23px;
     }
+
 }
 
 @media(min-width: 355px){
@@ -239,113 +292,56 @@
 }
 @media(min-width: 650px){
     .vertical{
-        font-size: 70px;
+        font-size: 52px;
         margin-bottom: 30px;
 
     }
 
     .name{
+        font-size: 70px;
+    }
+
+    .job{
+        font-size: 30px;
+    }
+
+}
+
+
+@media (min-width: 992px){
+    .vertical{
+        font-size: 60px;
+        margin-bottom: 35px;
+
+    }
+    .name{
         font-size: 80px;
+    }
+    .job{
+        font-size: 37px;
+    }
+
+    
+
+}
+
+@media(min-width: 1150px){
+    .vertical{
+        font-size: 80px;
+        margin-bottom: 40px;
+    }
+    .name{
+        font-size: 100px;
     }
 
     .job{
         font-size: 40px;
     }
 
-    .container{
-        background:
-        url('./../../../assets/images/shapes/mobile-bottom.png') 0px 270px/100vw 100vh no-repeat,
-        url('./../../../assets/images/shapes/left-landing.png') -500px -15px/contain no-repeat,
-        url('./../../../assets/images/shapes/right-landing.png') calc(100% + 540px) -75px / contain no-repeat,;
-    }
-
 }
 
-@media(min-width: 750px){
-    .vertical{
-        font-size: 75px;
-        margin-bottom: 35px;
 
-    }
-
-    .name{
-        font-size: 90px;
-    }
-
-    .job{
-        font-size: 44px;
-    }
-
-}
-
-@media(min-width: 850px){
-    .vertical{
-        font-size: 85px;
-        margin-bottom: 40px;
-    }
-
-    .name{
-        font-size: 100px;
-    }
-
-    .job{
-        font-size: 48px;
-    }
-
-}
-
-@media(min-width: 950px){
-    .vertical{
-        font-size: 90px;
-        margin-bottom: 45px;
-
-    }
-
-    .name{
-        font-size: 110px;
-    }
-
-    .job{
-        font-size: 52px;
-    }
-
-}
-
-@media(min-width: 1050px){
-    .vertical{
-        font-size: 100px;
-        margin-bottom: 50px;
-
-    }
-
-    .name{
-        font-size: 120px;
-    }
-
-    .job{
-        font-size: 56px;
-    }
-
-}
-
-@media(min-width: 1150px){
-    .vertical{
-        font-size: 105px;
-        margin-bottom: 55px;
-
-    }
-
-    .name{
-        font-size: 130px;
-    }
-
-    .job{
-        font-size: 60px;
-    }
-
-}
-
-@media(min-width: 1250px){
+@media(min-width: 1450px){
     .vertical{
         font-size: 110px;
         margin-bottom: 60px;
@@ -357,57 +353,11 @@
     }
 
     .job{
-        font-size: 64px;
+        font-size: 65px;
     }
 
+    
 }
 
 
-@media(min-width: 1350px){
-    .vertical{
-        font-size: 115px;
-        margin-bottom: 65px;
-
-    }
-
-    .name{
-        font-size: 150px;
-    }
-
-    .job{
-        font-size: 68px;
-    }
-}
-
-@media(min-width: 1450px){
-    .vertical{
-        font-size: 120px;
-        margin-bottom: 70px;
-
-    }
-
-    .name{
-        font-size: 150px;
-    }
-
-    .job{
-        font-size: 72px;
-    }
-}
-
-@media(min-width: 1550px){
-    .vertical{
-        font-size: 125px;
-        margin-bottom: 75px;
-
-    }
-
-    .name{
-        font-size: 160px;
-    }
-
-    .job{
-        font-size: 76px;
-    }
-}
 
